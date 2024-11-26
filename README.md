@@ -94,11 +94,87 @@ Here’s an overview of the main directories:
 
 ```plaintext
 bible-app/
-├── backend/          # Backend API and server logic
-├── frontend/         # React frontend
-├── docs/             # Project documentation
-├── tests/            # Unit and integration tests
-└── docker-compose.yml # Docker configuration
+├── backend/                                # Backend API and server logic
+│   ├── controllers/                        # Business logic for different features
+│   │   ├── triviaController.js             # Trivia game logic
+│   │   ├── scheduleController.js           # Church schedule logic
+│   │   ├── storyController.js              # Children's Bible stories logic
+│   │   ├── userController.js               # User authentication and progress tracking
+│   ├── models/                             # Database models and schemas
+│   │   ├── Trivia.js                       # Trivia questions schema
+│   │   ├── Schedule.js                     # Church schedule schema
+│   │   ├── BibleStory.js                   # Bible stories schema
+│   │   ├── User.js                         # User account schema
+│   ├── routes/                             # API routes
+│   │   ├── triviaRoutes.js                 # Endpoints for trivia game
+│   │   ├── scheduleRoutes.js               # Endpoints for schedule
+│   │   ├── storyRoutes.js                  # Endpoints for Bible stories
+│   │   ├── userRoutes.js                   # Endpoints for user authentication
+│   ├── db/                                 # Database configuration and migrations
+│   │   ├── config.js                       # Database connection settings
+│   │   ├── migrations/                     # Database migration scripts
+│   │   ├── seeders/                        # Seed data for initial setup
+│   ├── utils/                              # Helper utilities
+│   │   ├── validators.js                   # Input validation utilities
+│   │   ├── errorHandler.js                 # Centralized error handling
+│   ├── tests/                              # Backend tests
+│   │   ├── testSchedule.js                 # Tests for schedule feature
+│   │   ├── testTrivia.js                   # Tests for trivia game
+│   ├── server.js                           # Entry point for backend
+│   ├── package.json                        # Backend dependencies
+│   ├── .env.example                        # Sample environment variables for backend
+├── frontend/                               # Frontend React application
+│   ├── public/                             # Static files served by React
+│   │   ├── index.html                      # Root HTML file for React app
+│   │   ├── images/                         # Static images for UI
+│   │   │   ├── ark.png
+│   │   │   ├── cross.png
+│   │   │   ├── church_logo.png
+│   │   └── styles/                         # Global CSS files
+│   │       ├── main.css                    # Main CSS file
+│   │       ├── children.css                # Styles for children's section
+│   ├── src/
+│   │   ├── components/                     # Reusable UI components
+│   │   │   ├── Header.js                   # Header navigation bar
+│   │   │   ├── Footer.js                   # Footer with contact info
+│   │   │   ├── Schedule.js                 # Displays church schedules
+│   │   │   ├── VideoSection.js             # YouTube video embeds
+│   │   │   ├── Guide.js                    # Bible study guide display
+│   │   │   ├── TriviaQuiz.js               # Trivia quiz game component
+│   │   │   ├── FillInTheBlank.js           # Fill-in-the-blank game
+│   │   │   ├── MemoryGame.js               # Memory game for children
+│   │   │   ├── ColoringBook.js             # Coloring book for children
+│   │   │   ├── ChildrenSection.js          # Contains children's activities
+│   │   │   ├── AdultGames.js               # Bible games for adults
+│   │   ├── pages/                          # Pages for routing
+│   │   │   ├── HomePage.js                 # Main page with church info
+│   │   │   ├── GamesPage.js                # Games hub for adults and children
+│   │   │   ├── StoriesPage.js              # Bible stories listing
+│   │   │   ├── ContactPage.js              # Contact information
+│   │   ├── utils/                          # Utility functions for frontend
+│   │   │   ├── api.js                      # Helper functions for API calls
+│   │   ├── App.js                          # Main React App component
+│   │   ├── index.js                        # React entry point
+│   │   ├── routes.js                       # React Router configuration
+│   ├── tests/                              # Frontend tests
+│   │   ├── testHomePage.js                 # Tests for HomePage
+│   │   ├── testTriviaQuiz.js               # Tests for TriviaQuiz component
+│   ├── package.json                        # Frontend dependencies
+│   ├── .env.example                        # Sample environment variables for frontend
+├── docs/                                   # Project documentation
+│   ├── README.md                           # Overview and setup instructions
+│   ├── INSTALLATION.md                     # Detailed installation guide
+│   ├── CONTRIBUTING.md                     # Collaboration guidelines
+│   ├── FEATURES.md                         # Detailed list of app features
+│   ├── LICENSE                             # License file
+├── database.sql                            # SQL schema file for database
+├── docker-compose.yml                      # Docker configuration for services
+├── Dockerfile                              # Dockerfile for backend
+├── Dockerfile.frontend                     # Dockerfile for frontend
+└── tests/                                  # Root test directory
+    ├── integration/                        # Integration tests
+    ├── unit/                               # Unit tests
+
 ```
 
 For a detailed breakdown, see the [project tree](#directory-structure).
